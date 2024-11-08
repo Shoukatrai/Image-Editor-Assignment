@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="wrapper">
+            <div class="editor">
+                <div class="filter">
+                    <label for="blur">Blur</label>
+                    <input type="range" min="0" max="5" value="0" step="0.1" id="blur" onchange="addFilterA(this)">
+                </div>
+                <div class="filter">
+                    <label for="contrast">Contrast</label>
+                    <input type="range" min="0" max="200" value="100" id="contrast" onchange="addFilterB(this)">
+                </div>
+                <div class="filter">
+                    <label for="hue-rotate">Hue-Rotate</label>
+                    <input type="range" min="0" max="360" value="0" id="hue-rotate" onchange="addFilterC(this)">    
+                </div>
+                <div class="filter">
+                    <label for="sepia">Sepia</label>
+                    <input type="range" min="0" max="100" value="0" id="sepia" onchange="addFilterD(this)">    
+                </div>
+                <div class="flip-button">
+                    <div class="flip-option">
+                        <input type="radio" name="flip" id="no-flip" checked onclick="flipImage(this)">
+                        <label for="no-flip">No Flip</label>
+                    </div>
+                    <div class="flip-option">
+                        <input type="radio" name="flip" id="flip-x" onclick="flipImageX(this)">
+                        <label for="flip-x">Flip Horizontal</label>
+                    </div>
+                    <div class="flip-option">
+                        <input type="radio" name="flip" id="flip-y" onclick="flipImageY(this)">
+                        <label for="flip-y">Flip Vertical</label>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <figure class="image-container">
+                    <img id="chosen-image" >
+                </figure>
+                <input type="file" id="upload-button" accept="image/*" onchange="getPic()">
+                <label for="upload-button">Choose an Image </label>
+            </div>
+        </div>
+</body>
+<script src="app.js"></script>
+</html>
